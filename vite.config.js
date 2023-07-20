@@ -11,7 +11,8 @@ export default defineConfig({
         vue({
             template: {
                 transformAssetUrls: {
-                    base: 'https://kidshare-furckk6aba-an.a.run.app',
+                    // base: 'https://kidshare-furckk6aba-an.a.run.app',
+                    base: null,
                     includeAbsolute: false,
                 },
             },

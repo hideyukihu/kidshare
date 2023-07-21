@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreChildcareLogRequest;
 use App\Http\Requests\UpdateChildcareLogRequest;
 use App\Models\ChildcareLog;
+use Inertia\Inertia;
 
 class ChildcareLogController extends Controller
 {
@@ -13,7 +14,8 @@ class ChildcareLogController extends Controller
      */
     public function index()
     {
-        //
+        $childcareLogs = ChildcareLog::all();
+        return Inertia::render('ChildcareLogs/Index', ['childcareLogs' => $childcareLogs]);
     }
 
     /**
@@ -21,7 +23,7 @@ class ChildcareLogController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('ChildcareLogs/Create');
     }
 
     /**
@@ -29,7 +31,8 @@ class ChildcareLogController extends Controller
      */
     public function store(StoreChildcareLogRequest $request)
     {
-        //
+        ChildcareLog::create($request->validated());
+        return redirect()->route('childcare_logs.index')->with('success', 'Childcare log created successfully.');
     }
 
     /**
@@ -37,7 +40,7 @@ class ChildcareLogController extends Controller
      */
     public function show(ChildcareLog $childcareLog)
     {
-        //
+        return Inertia::render('ChildcareLogs/Show', ['childcareLog' => $childcareLog]);
     }
 
     /**
@@ -45,7 +48,7 @@ class ChildcareLogController extends Controller
      */
     public function edit(ChildcareLog $childcareLog)
     {
-        //
+        return Inertia::render('ChildcareLogs/Edit', ['childcareLog' => $childcareLog]);
     }
 
     /**
@@ -53,7 +56,8 @@ class ChildcareLogController extends Controller
      */
     public function update(UpdateChildcareLogRequest $request, ChildcareLog $childcareLog)
     {
-        //
+        $childcareLog->update($request->validated());
+        return redirect()->route('childcare_logs.index')->with('success', 'Childcare log updated successfully.');
     }
 
     /**
@@ -61,6 +65,7 @@ class ChildcareLogController extends Controller
      */
     public function destroy(ChildcareLog $childcareLog)
     {
-        //
+        $childcareLog->delete();
+        return redirect()->route('childcare_logs.index')->with('success', 'Childcare log deleted successfully.');
     }
 }

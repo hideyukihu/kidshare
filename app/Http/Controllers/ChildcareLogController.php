@@ -14,7 +14,8 @@ class ChildcareLogController extends Controller
      */
     public function index()
     {
-        $childcareLogs = ChildcareLog::all();
+        $childcareLogs = ChildcareLog::with('user', 'category')
+        ->get();
         return Inertia::render('ChildcareLogs/Index', ['childcareLogs' => $childcareLogs]);
     }
 

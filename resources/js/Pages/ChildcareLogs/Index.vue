@@ -10,7 +10,8 @@
         <ul>
             <li v-for="log in childcareLogs" :key="log.id">
                 {{ log.id }}
-                {{ log.user_id }}
+                {{ log.user.name }}
+                {{ log.category.name }}
                 {{ log.datetime }}
                 {{ log.memo }}
             </li>

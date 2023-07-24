@@ -1,11 +1,16 @@
 <script setup>
-    defineProps({
-        childcareLogs:Array
-    })
+import GChart from '@/Components/GChart.vue';
+import Time from '@/Components/TimeTable.vue';
+
+defineProps({
+    childcareLogs: Array,
+
+})
+
 </script>
 
 <template>
-    <div>
+    <div class="text-center">
         <h1>Childcare Logs</h1>
         <ul>
             <li v-for="log in childcareLogs" :key="log.id">
@@ -16,8 +21,11 @@
                 {{ log.memo }}
             </li>
         </ul>
+
+        <GChart />
     </div>
-    <!-- <div>childcareLogsindex</div> -->
+
+
 </template>
 
 

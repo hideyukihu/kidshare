@@ -20,15 +20,23 @@ class CategorySeeder extends Seeder
             ],
             [
                 'id' => 2,
-                'name' => 'うんち',
+                'name' => 'ミルク',
             ],
             [
                 'id' => 3,
-                'name' => 'おしっこ',
+                'name' => 'うんち',
             ],
             [
                 'id' => 4,
-                'name' => '睡眠',
+                'name' => 'おしっこ',
+            ],
+            [
+                'id' => 5,
+                'name' => '寝る',
+            ],
+            [
+                'id' => 6,
+                'name' => '起きる',
             ],
         ]);
     }

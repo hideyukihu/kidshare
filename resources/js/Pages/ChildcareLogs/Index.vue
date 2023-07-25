@@ -4,6 +4,7 @@ import Time from '@/Components/TimeTable.vue';
 
 defineProps({
     childcareLogs: Array,
+    image:String
 
 })
 
@@ -23,7 +24,11 @@ defineProps({
         </ul>
 
         <GChart />
+:
     </div>
+    <img src="/images/うんち.svg" />
+
+
 
 
 </template>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreChildcareLogRequest;
 use App\Http\Requests\UpdateChildcareLogRequest;
 use App\Models\ChildcareLog;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 
 class ChildcareLogController extends Controller
@@ -32,8 +33,14 @@ class ChildcareLogController extends Controller
      */
     public function store(StoreChildcareLogRequest $request)
     {
-        ChildcareLog::create($request->validated());
-        return redirect()->route('childcare_logs.index')->with('success', 'Childcare log created successfully.');
+        ChildcareLog::create([
+            'user_id' => auth()->id(),
+            'category_id' => $request->category_id,
+            'datetime' => now(),
+            'memo' => $request->memo
+
+        ]);
+        return redirect()->route('childcarelog.index')->with('success', 'Childcare log created successfully.');
     }
 
     /**

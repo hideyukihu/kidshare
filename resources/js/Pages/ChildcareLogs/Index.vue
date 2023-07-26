@@ -4,9 +4,7 @@ import Time from '@/Components/TimeTable.vue';
 import { Link } from '@inertiajs/vue3';
 
 defineProps({
-    childcareLogs: Array,
-    image:String
-
+    childcareLogs: Array
 })
 
 </script>
@@ -25,14 +23,12 @@ defineProps({
         </ul>
 
         <GChart />
-:
     </div>
-    <img src="/images/うんち.svg" class="w-5 h-5"/>
+    <img src="/images/うんち.svg" class="w-5 h-5" />
 
     <Link href="/childcarelog/create" class="button">記録画面</Link>
 
-
-
+    <Time/>
 </template>
 
 

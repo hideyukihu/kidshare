@@ -2,6 +2,9 @@
 import GChart from '@/Components/GChart.vue';
 import Time from '@/Components/TimeTable.vue';
 import { Link } from '@inertiajs/vue3';
+import flatpickr from '@/Components/Flatpickr.vue';
+
+
 
 defineProps({
     childcareLogs: Array
@@ -29,6 +32,10 @@ defineProps({
     <Link href="/childcarelog/create" class="button">記録画面</Link>
 
     <Time/>
+
+    <flatpickr />
+
+
 </template>
 
 

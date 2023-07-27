@@ -20,6 +20,8 @@
         "vue": "^3.2.41"
     },
     "dependencies": {
+        "flatpickr": "^4.6.13",
+        "vue-flatpickr-component": "^11.0.3",
         "vue-google-charts": "^1.1.0"
     }
 }

@@ -31,11 +31,9 @@ defineProps({
 
     <Link href="/childcarelog/create" class="button">記録画面</Link>
 
-    <Time/>
+    <Time />
 
-    <flatpickr />
-
-
+    <flatpickr></flatpickr>
 </template>
 
 

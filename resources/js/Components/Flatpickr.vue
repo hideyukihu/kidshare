@@ -16,5 +16,7 @@ const config = ref({
     altInput: true,
     dateFormat: 'Y-m-d',
     locale: Japanese, // locale for this instance only
+    time_24hr: true,
+    minuteIncrement: 30,
 });
 </script>

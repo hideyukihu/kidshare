@@ -25,7 +25,6 @@ defineProps({
             </li>
         </ul>
 
-        <GChart />
     </div>
     <img src="/images/うんち.svg" class="w-5 h-5" />
 
